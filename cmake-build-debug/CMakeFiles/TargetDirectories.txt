@@ -1,0 +1,3 @@
+C:/Users/emili/Documents/GitHub/neural-net/cmake-build-debug/CMakeFiles/neural_net.dir
+C:/Users/emili/Documents/GitHub/neural-net/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/emili/Documents/GitHub/neural-net/cmake-build-debug/CMakeFiles/rebuild_cache.dir
