@@ -86,7 +86,7 @@ float intersection(SDL_Point p1, SDL_Point p2, SDL_Point p3, SDL_Point p4) {
 	if (d == 0) return 0;
 
 	// Get the x and y
-	float pre = (x1*y2 - y1*x2), post = (x3*y4 - y3*x4);
+	float pre = (x1*y2 - y1 * x2), post = (x3*y4 - y3 * x4);
 	float x = (pre * (x3 - x4) - (x1 - x2) * post) / d;
 	float y = (pre * (y3 - y4) - (y1 - y2) * post) / d;
 
@@ -111,7 +111,7 @@ string remove_zero(string str)
 
 	// Count trailing zeros
 	int i = str.length() - 1;
-	while ((str[i] == '0' || str[i] == '.') && i>0) {
+	while ((str[i] == '0' || str[i] == '.') && i > 0) {
 
 		if (str[i] == '.') {
 			str.erase(str.begin() + i);

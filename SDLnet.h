@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <SDL.h>
@@ -78,7 +80,7 @@ bool init()
 				SDL_SetRenderDrawBlendMode(netRenderer, SDL_BLENDMODE_BLEND);
 				TTF_Init();
 				IMG_Init(IMG_INIT_JPG);
-				Sans = TTF_OpenFont("Sans.ttf", 16); //this opens a font style and sets a size
+				Sans = TTF_OpenFont("..\\Resources\\Sans.ttf", 16); //this opens a font style and sets a size
 														//Initialize PNG loading
 
 			}
@@ -188,9 +190,7 @@ void SDLnet::draw_logo(SDL_Rect area, SDL_Renderer* renderer) {
 	writeTxt("NEURAL", 30, 0, area.w - 60, 30, 0, renderer);
 	writeTxt("NET", 60, 35, area.w - 120, 30, 0, renderer);
 	writeTxt("Created by: ", 5, 65, area.w - 120, 30, 0, renderer);
-	writeTxt("Riccardo Polesel", area.w - 110, 63, 100, 15, 0, renderer);
-	writeTxt("Nicolo   Dittadi", area.w - 110, 78, 100, 15, 0, renderer);
-	writeTxt("Emilio Dalla Torre", area.w - 110, 93, 100, 15, 0, renderer);
+	writeTxt("Emilio Dalla Torre", area.w - 110, 65, 100, 15, 0, renderer);
 }
 
 void SDLnet::draw_graph(vector<double> points, SDL_Rect area, SDL_Renderer* renderer, double zoom) {

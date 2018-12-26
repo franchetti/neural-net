@@ -6,23 +6,23 @@ class Genetic {
 	vector<double> graph;
 	float iteration = 1;
 	float time_warp = 1;
-	float sleep=0;
+	float sleep = 0;
 public:
-	vector<pair<float,pair<Simulation, NeuralNet>>> objects;
+	vector<pair<float, pair<Simulation, NeuralNet>>> objects;
 	Genetic(float population, vector<int> model) {
 		for (int i = 0; i < population; i++) {
-			Simulation s("C:/car.png", netRenderer);
+			Simulation s("..\\Resources\\Car.png", netRenderer);
 			NeuralNet net;
 			net.generate_net(model);
 			pair<Simulation, NeuralNet> b(s, net);
-			objects.push_back(pair<float, pair<Simulation, NeuralNet>>(0,b));
+			objects.push_back(pair<float, pair<Simulation, NeuralNet>>(0, b));
 		}
 	}
 	void itinerate(float prob = 50);
 };
 
 void Genetic::itinerate(float prob) {
-	sdlnet.log.push_back("Iteration: " + remove_zero(to_string(iteration)) );
+	sdlnet.log.push_back("Iteration: " + remove_zero(to_string(iteration)));
 	Timer t;
 	float total_fitness = 0;
 	float average_fitness = 0;
@@ -31,13 +31,13 @@ void Genetic::itinerate(float prob) {
 		while (!i.second.first.car_crashed) {
 			for (int t = 0; t < time_warp; t++) {
 				fit += i.second.first.run(&i.second.second);
-				
+
 			}
 			while (SDL_PollEvent(&event)) {
 				switch (event.key.keysym.sym)
 				{
-				case SDLK_ESCAPE: 
-					if(!quit)sdlnet.log.push_back("The application will close as soon as the itineration has finished");
+				case SDLK_ESCAPE:
+					if (!quit)sdlnet.log.push_back("The application will close as soon as the itineration has finished");
 					quit = true;
 
 				}
@@ -50,7 +50,7 @@ void Genetic::itinerate(float prob) {
 				switch (event.type) {
 				case SDL_MOUSEBUTTONDOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
-						time_warp+=sdlnet.button();
+						time_warp += sdlnet.button();
 						if (time_warp < 0)time_warp = 0;
 					}
 				}
@@ -60,10 +60,10 @@ void Genetic::itinerate(float prob) {
 
 			sdlnet.draw(&i.second.second, &i.second.first, graph, netRenderer);
 		}
-		
+
 		i.first = fit;
 		total_fitness += fit;
-		
+
 	}
 	sort(objects.begin(), objects.end(), [](pair<float, pair<Simulation, NeuralNet>> a, pair<float, pair<Simulation, NeuralNet>> b) { return a.first > b.first; });
 	if (objects[objects.size() - 1].first < 0) {
@@ -100,7 +100,7 @@ void Genetic::itinerate(float prob) {
 			} while (index1 == index2 && tries < temp.size() / 2);
 
 
-			Simulation s("C:\\Users\\emili\\Desktop\\s.png", netRenderer);
+			Simulation s("..\\Resources\\Car.png", netRenderer);
 
 			pair<Simulation, NeuralNet> b(s, objects[index1].second.second.crossingover(objects[index2].second.second, prob));
 			new_objects.emplace_back(0, b);
