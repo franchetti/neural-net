@@ -1,0 +1,4 @@
+C:\Users\emili\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\183.4886.39\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\emili\Programmazione\GitHub\neural-net
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/emili/Programmazione/GitHub/neural-net/cmake-build-debug
