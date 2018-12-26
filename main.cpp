@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "genetic.h"
 
 int main(int argc, char* args[])
@@ -18,7 +19,7 @@ int main(int argc, char* args[])
 
 	file = 0;
 	for (auto& o : genetic.objects) {
-		o.second.second.save_net("C:/Users/Riccardo-PC/Source/Repos/NNv0.0/NNv0.0/Saves/netsave#" + to_string(file) + ".net");
+		// o.second.second.save_net("D:" + to_string(file) + ".net");
 		file++;
 	}
 

@@ -23,6 +23,7 @@ class Simulation {
 public:
 	bool car_crashed = false;
 	Simulation(string path, SDL_Renderer* renderer) {
+		path = "C:\\Users\\emili\\Desktop\\s.png";
 		if (car_texture == NULL) {
 			//Load image at specified path
 			SDL_Surface* loadedSurface = IMG_Load(path.c_str());

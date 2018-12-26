@@ -100,10 +100,10 @@ void Genetic::itinerate(float prob) {
 			} while (index1 == index2 && tries < temp.size() / 2);
 
 
-			Simulation s("C:/car.png", netRenderer);
+			Simulation s("C:\\Users\\emili\\Desktop\\s.png", netRenderer);
 
 			pair<Simulation, NeuralNet> b(s, objects[index1].second.second.crossingover(objects[index2].second.second, prob));
-			new_objects.push_back(pair<float, pair<Simulation, NeuralNet>>(0, b));
+			new_objects.emplace_back(0, b);
 
 			if (Random::random_value(0, 100) <= 1) {
 				if (new_objects.size() > 0)
