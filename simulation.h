@@ -86,8 +86,9 @@ void Simulation::draw(SDL_Rect area, SDL_Renderer* renderer, double zoom) {
 
 
 	SDL_Point center = car_position;
-	SDL_RenderDrawLine(renderer, 0 - center.x*zoom + area.w / 2, -10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2, 10000 - center.x*zoom + area.w / 2);
-	SDL_RenderDrawLine(renderer, -10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2, 10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2);
+	// Uncomment to enable axis drawing in road map.
+	// SDL_RenderDrawLine(renderer, 0 - center.x*zoom + area.w / 2, -10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2, 10000 - center.x*zoom + area.w / 2);
+	// SDL_RenderDrawLine(renderer, -10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2, 10000 - center.x*zoom + area.w / 2, 0 - center.x*zoom + area.w / 2);
 
 	float angle = angular_coefficient(road[1].first, road[0].first);
 	SDL_Point a;
